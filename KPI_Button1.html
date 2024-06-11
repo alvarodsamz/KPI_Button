@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+background-color: #FF9900;
+color: black;
+cursor: pointer;
+padding: 8px;
+border: none;
+text-align: center;
+width: 300px;
+outline: none;
+font-size: 14px;
+
+}
+
+.active, .collapsible:hover {
+background-color: white;
+color:#FF9900;
+}
+
+.content {
+padding: 0 18px;
+max-height: 0;
+font-size: 12px;
+overflow: hidden;
+font-family: Arial;
+transition: max-height 0.2s ease-out;
+background-color: #EEEEEE;
+}
+</style>
+</head>
+<body>
+
+<button class="collapsible"><strong>How to use it</strong></button>
+<div class="content">
+<p><strong>TREND GRAPHS</strong></p>
+<ol>
+<li>Select the year you would like to review by clicking on the year bar (Current year by default).</li>
+<li>Select time period (Weekly, Monthly, Quaterly) you would like to review by selecting on "Time Period" (Weekly by default).</li>
+<li>Select the week/month/quarter you would like to review by clicking on the week/month/quarter bar.</li>
+<li>If you want to check a specific site, select the site contributor you would like to review by clicking on the site contributors table.</li>
+<li>If you want to check a specific reason, select the reason contributor you would like to review by clicking on the reason contributors table.</li>
+</ol>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+if (content.style.maxHeight){
+content.style.maxHeight = null;
+} else {
+content.style.maxHeight = content.scrollHeight + "px";
+}
+});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+background-color: #FF9900;
+color: black;
+cursor: pointer;
+padding: 8px;
+border: none;
+text-align: center;
+width: 300px;
+outline: none;
+font-size: 14px;
+
+}
+
+.active, .collapsible:hover {
+background-color: white;
+color:#FF9900;
+}
+
+.content {
+padding: 0 18px;
+max-height: 0;
+font-size: 12px;
+overflow: hidden;
+font-family: Arial;
+transition: max-height 0.2s ease-out;
+background-color: #EEEEEE;
+}
+</style>
+</head>
+<body>
+
+<button class="collapsible"><strong>How to use it</strong></button>
+<div class="content">
+<p><strong>SITE STRUCTURE - DIVE DEEP GRAPHS</strong></p>
+<ol>
+<li>Select the Tech Pillar/Region Pillar (drill down) you would like to review by clicking on the Tech Pillar/Region Pillar bar.</li>
+<li>Select the Technology you would like to review by clicking on Technology bar.</li>
+<li>Select the Site you would like to review by clicking on Site bar.</li>
+<li>Select the Area/Subarea (drill down) you would like to review by clicking on Area/Subarea bar.</li>
+<li>Select the MP you would like to review by clicking on MP table.</li>
+<li>Select the Reason you would like to review by clicking on Reason bar.</li>
+</ol>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+if (content.style.maxHeight){
+content.style.maxHeight = null;
+} else {
+content.style.maxHeight = content.scrollHeight + "px";
+}
+});
+}
+</script>
+</body>
+</html>
